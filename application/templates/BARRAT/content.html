@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Barrat</title>
+  
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+  <link rel="stylesheet" href="{%static 'BARRAT/style.css'%}"> 
+
+
+
+</head>
+
+<body id="content-body">
+
+  <!-- partial:index.partial.html -->
+  <form id="msform" method="POST" action = "{% url 'save'%}" >
+      {% csrf_token %}        
+        {%for question in questions %}
+        <fieldset id = "field" >
+            <h2 class="fs-title"> {{question.id_question}} - {{question.question_text}}</h2>           
+                {%for answer in answers %}
+                  {%if answer.id_question_id == question.id_question %}   
+                                             
+                      <div class="inputGroup">
+                        <input id="radio_{{forloop.counter}}" name="radio_{{question.id_question}}"  class = "next"  type="radio" value = "{{answer.id}}"/>
+                        <label for="radio_{{forloop.counter}}">{{answer.answer_text}}</label>
+                      </div>                    
+                      
+                      <!-- 
+
+                           
+                      <input id = "wea" type = "button"  class=" btn next  btn-warning action-button" name = "choice" value="{{answer.id}}"/>
+                      <label for ="wea">{{answer.answer_text}}</label>
+                      
+                      <div class="inputGroup">
+                        <input id="radio1" name="radio"  class = "next" hidden = True type="radio"/>
+                        <label for="radio1">{{answer.answer_text}}</label>
+                      </div>                
+                                            
+                        
+                      <input type="button" name="next" class=" op " value="{{answer.answer_text}}" />
+                      <div class="inputGroup">
+                        <input id="radio1" name="radio" class=" btn next  btn-warning action-button" type="radio"/>
+                        <label for="radio1">{{answer.answer_text}}</label>
+                      </div>-->
+                      
+
+                  {%endif %}
+                  
+                    
+                {%endfor %}
+              
+           </fieldset>  
+
+         
+          
+           
+        {% endfor %}   
+        <fieldset>
+          
+          <input type="submit" value="Finalizar test">
+
+        </fieldset>
+
+        
+        
+  </form>
+  
+  <!-- partial   -->  
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js'></script>
+  <script src="{%static 'BARRAT/animation.js'%}"></script>
+  <script src = "{% static 'BARRAT/ajaxsave.js' %}" ></script>
+  
+</body>
+
+
+</html>

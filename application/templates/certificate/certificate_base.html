@@ -1,0 +1,52 @@
+{% load static %}
+
+<html>
+<head>
+<meta charset="utf-8">
+<title>Certificado base</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static '/BARRAT/certificate.css' %}">
+
+
+    {% block modcss %}
+    {% endblock %}
+</head>
+
+<body>
+<div class="container-fluid">
+    <div class="certificate-container center-me-hor">
+        <div class="certificate jumbotron shadow p-3 mb-5 rounded" style="margin-top:2rem">
+            <div id="certificate-head" class="horizontal">
+                {% block head %}                    
+                        {% include 'certificate/certificate_head.html' %}
+                {% endblock %}
+            </div>
+            <div id="certificate-body">
+                {% block body %}
+                
+                {% endblock %}
+            </div>
+            <div id="certificate-footer">
+                {% block footer %}
+                  
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% block more_pages %}
+{% endblock %}
+
+<div class='fixed btnDwn'>
+    <a href='javascript:genPDF()'><i class="fas fa-file-download"></i></a>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js" integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/ccc33a72c1.js" crossorigin="anonymous"></script>
+
+{% block modjs %}{% endblock %}
+</body>
+</html>

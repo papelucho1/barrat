@@ -1,0 +1,133 @@
+:root {
+    --main-orange: #ffc107;
+    --dark-orange: #ff910a;
+    --main-gray: #e9ecef;
+    --back-gray: #d1d7dc;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 1000px) {
+    :root {
+      font-size: 8px;
+    }
+}
+
+body {
+    margin: 0;
+    font-family: Helvetica neue;
+    background-color: var(--back-gray);
+    width: 100%;
+}
+
+.center-me-hor{
+    margin: 0 auto;
+}
+
+.certificate-container{
+    width: 85vw;
+}
+
+.certificate{
+    width: 85vw;
+    height: 110vw;
+    background-color: white;
+}
+
+#certificate-head{
+    height: 15%;
+    background-color: var(--main-orange);
+    text-align: center;
+}
+
+#certificate-body{
+    height: 75%;
+    width: 100%;
+    padding: 2rem;
+    background-color: white;
+}
+
+#certificate-footer{
+    height: 10%;
+    background-color: var(--main-orange);
+}
+
+/* MAIN HEAD STYLE */
+
+#info_sup{
+    width: 100%;
+    height: 17%;
+    background-color: var(--main-orange);
+}
+
+#logo{
+    width: 20%;
+    height: 100%;
+}
+
+#personal_info{
+    width: 80%;
+    height: 100%;
+}
+
+.full_center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.full_container{
+    width: 100%;
+    height: 100%;
+}
+
+.horizontal{
+    display: flex;
+    justify-content: center;
+}
+
+.info_col{
+    width: 50%;
+    height: 80%;
+}
+
+.info_col ul{
+    list-style: none;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+}
+
+.info_col ul li{
+    background-color: white;
+    width: 95%;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 2px;
+    margin-bottom: 5px;
+}
+
+/* Download button */
+
+.btnDwn{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+.btnDwn a{
+    text-decoration: none;
+}
+
+.btnDwn i{
+    text-decoration: none;
+     color: black;
+}
+
+.btnDwn:hover i{
+    color: var(--main-orange);
+}
+
+
+
+.fas{
+    font-size: 3rem;
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BARRAT</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <style>
+        body,
+        html {
+            height: 100%;
+            display: grid;
+        }
+        .center {
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="jumbotron center">
+        <h1 class="display-4">Cuestionario Barratt</h1>
+        <p class="lead">Las personas son diferentes en cuanto a la forma en que se comporan y piensan en distintas
+            situaciones</p>
+        <hr class="my-4">
+        <p>Esta es una prueba para medir algunas formas en que usted actúa y piensa.</br> No se detenga
+            demasiado.</br>Responda rápida y honestamente.</p>
+        
+        
+    <a class="btn btn-warning btn-lg" href="{% url 'test' 1 %}" role="button">Ir a la prueba</a>        </form>
+    </div>
+</body>
+
+</html>
